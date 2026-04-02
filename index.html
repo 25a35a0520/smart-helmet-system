@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Helmet System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🚀 Smart Helmet Dashboard</h1>
+
+    <!-- Helmet Image -->
+    <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" class="helmet-img">
+
+    <div class="container">
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" class="icon">
+            <h2>Helmet Status</h2>
+            <p id="helmet">Not Worn ❌</p>
+            <button onclick="wearHelmet()">Wear Helmet</button>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" class="icon">
+            <h2>Alcohol Detection</h2>
+            <p id="alcohol">Safe ✅</p>
+            <button onclick="detectAlcohol()">Test</button>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/564/564619.png" class="icon">
+            <h2>Accident Detection</h2>
+            <p id="accident">No Accident</p>
+            <button onclick="simulateAccident()">Simulate</button>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1048/1048315.png" class="icon">
+            <h2>Bike Ignition</h2>
+            <p id="bike">OFF</p>
+            <button onclick="startBike()">Start Bike</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
