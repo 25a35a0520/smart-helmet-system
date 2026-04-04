@@ -1,19 +1,26 @@
-// Real-time simulation
+// Status function with colors
+function setStatus(id, text, isGood) {
+    let el = document.getElementById(id);
+    el.innerText = text;
+    el.style.color = isGood ? "lightgreen" : "red";
+}
+
+// Auto update (simulation)
 setInterval(() => {
 
-    let helmet = Math.random() > 0.5 ? "Worn ✅" : "Not Worn ❌";
-    document.getElementById("helmet-status").innerText = helmet;
+    let helmetOk = Math.random() > 0.5;
+    setStatus("helmet-status", helmetOk ? "Worn ✅" : "Not Worn ❌", helmetOk);
 
-    let alcohol = Math.random() > 0.7 ? "Detected ❌" : "Safe ✅";
-    document.getElementById("alcohol-status").innerText = alcohol;
+    let alcoholOk = Math.random() > 0.7;
+    setStatus("alcohol-status", alcoholOk ? "Detected ❌" : "Safe ✅", !alcoholOk);
 
-    let accident = Math.random() > 0.9 ? "Accident 🚨" : "Safe";
-    document.getElementById("accident-status").innerText = accident;
+    let accident = Math.random() > 0.9;
+    setStatus("accident-status", accident ? "Accident 🚨" : "Safe", !accident);
 
 }, 3000);
 
 
-// Bike ignition
+// Bike control
 let bikeOn = false;
 function toggleBike() {
     bikeOn = !bikeOn;
@@ -23,11 +30,5 @@ function toggleBike() {
 
 // Emergency alert
 function sendAlert() {
-    alert("🚨 Emergency Alert Sent with Location!");
-}
-
-
-// Dark/Light mode
-function toggleTheme() {
-    document.body.classList.toggle("light-mode");
+    alert("🚨 Emergency Alert Sent!");
 }
