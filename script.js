@@ -1,68 +1,33 @@
-// ----------------------
-// SMART HELMET VARIABLES
-// ----------------------
-let helmetWorn = false;
-let alcoholDetected = false;
+// Real-time simulation
+setInterval(() => {
 
-// ----------------------
-// HELMET FUNCTION
-// ----------------------
-function wearHelmet() {
-    helmetWorn = true;
-    document.getElementById("helmet").innerText = "Worn ✅";
+    let helmet = Math.random() > 0.5 ? "Worn ✅" : "Not Worn ❌";
+    document.getElementById("helmet-status").innerText = helmet;
+
+    let alcohol = Math.random() > 0.7 ? "Detected ❌" : "Safe ✅";
+    document.getElementById("alcohol-status").innerText = alcohol;
+
+    let accident = Math.random() > 0.9 ? "Accident 🚨" : "Safe";
+    document.getElementById("accident-status").innerText = accident;
+
+}, 3000);
+
+
+// Bike ignition
+let bikeOn = false;
+function toggleBike() {
+    bikeOn = !bikeOn;
+    document.getElementById("bike-status").innerText = bikeOn ? "ON ✅" : "OFF ❌";
 }
 
-// ----------------------
-// ALCOHOL DETECTION
-// ----------------------
-function detectAlcohol() {
-    alcoholDetected = Math.random() > 0.5;
 
-    if (alcoholDetected) {
-        document.getElementById("alcohol").innerText = "Alcohol Detected ❌";
-    } else {
-        document.getElementById("alcohol").innerText = "Safe ✅";
-    }
+// Emergency alert
+function sendAlert() {
+    alert("🚨 Emergency Alert Sent with Location!");
 }
 
-// ----------------------
-// ACCIDENT SIMULATION
-// ----------------------
-function simulateAccident() {
-    document.getElementById("accident").innerText = "Accident Detected 🚨";
-    alert("🚨 Emergency Alert Sent to Family!");
-}
 
-// ----------------------
-// BIKE START LOGIC
-// ----------------------
-function startBike() {
-    if (helmetWorn && !alcoholDetected) {
-        document.getElementById("bike").innerText = "ON ✅";
-    } else {
-        alert("❌ Cannot Start Bike!\nWear Helmet & No Alcohol Required");
-    }
-}
-
-// ----------------------
-// LOGIN SYSTEM
-// ----------------------
-function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    if (user === "admin" && pass === "1234") {
-        alert("✅ Login Successful!");
-        window.location.href = "index.html";
-    } else {
-        document.getElementById("error").innerText = "Invalid Login ❌";
-    }
-}
-
-// ----------------------
-// LOGOUT
-// ----------------------
-function logout() {
-    alert("Logged Out 👋");
-    window.location.href = "login.html";
+// Dark/Light mode
+function toggleTheme() {
+    document.body.classList.toggle("light-mode");
 }
