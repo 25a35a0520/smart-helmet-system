@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - Smart Helmet</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
 </head>
+<body style="text-align:center; margin-top:100px; font-family:Arial;">
 
-<body>
+    <h2>Smart Helmet Login</h2>
 
-    <div class="login-box">
-        <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
 
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
 
-        <button onclick="login()">Login</button>
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
 
-        <p id="error"></p>
-    </div>
+    if(user === "admin" && pass === "1234") {
+        window.location.href = "index.html";
+    } else {
+        alert("Invalid Login");
+    }
+}
+</script>
 
-    <script src="script.js"></script>
 </body>
 </html>
