@@ -5,13 +5,12 @@ body {
     font-family: Arial;
 }
 
-/* Title */
 .title {
     text-align: center;
     padding: 15px;
 }
 
-/* Grid Layout */
+/* GRID */
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -19,7 +18,7 @@ body {
     padding: 20px;
 }
 
-/* Cards */
+/* CARDS */
 .card {
     background: #1f1f1f;
     padding: 20px;
@@ -32,7 +31,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Buttons */
+/* BUTTON */
 button {
     padding: 8px 12px;
     border: none;
@@ -43,7 +42,7 @@ button {
     margin-top: 10px;
 }
 
-/* Map */
+/* MAP */
 iframe {
     width: 100%;
     height: 200px;
