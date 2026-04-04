@@ -7,12 +7,35 @@
 <!-- CSS LINK (VERY IMPORTANT) -->
 <link rel="stylesheet" href="styles.css">
 <style>
-    body{
-        background:red;
-        color:red;
-    }
-    
-</style> 
+body {
+    margin: 0;
+    font-family: Arial;
+    background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Overlay */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    padding: 15px;
+}
+
+/* Grid */
+    </style>
 </head>
 
 <body>
