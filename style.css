@@ -1,98 +1,51 @@
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #0f172a, #1e293b);
-    color: white;
-    text-align: center;
     margin: 0;
+    font-family: Arial;
+    background: #121212;
+    color: white;
 }
 
-/* Title */
-h1 {
-    margin-top: 20px;
-}
-
-/* Helmet image */
-.helmet-img {
-    width: 120px;
-    margin: 10px;
-}
-
-/* Container */
-.container {
+header {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px;
+    background: #1f1f1f;
 }
 
-/* Cards */
-.card {
-    background: rgba(0,0,0,0.7);
+button {
+    padding: 8px 12px;
+    border: none;
+    background: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     padding: 20px;
-    margin: 15px;
-    border-radius: 15px;
-    width: 250px;
+}
+
+.card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
     transition: 0.3s;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .card:hover {
     transform: scale(1.05);
 }
 
-/* Icons */
-.icon {
-    width: 60px;
-    margin-bottom: 10px;
+/* Light Mode */
+.light-mode {
+    background: white;
+    color: black;
 }
 
-/* Buttons */
-button {
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    background: #22c55e;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #16a34a;
-}
-
-/* Login Box */
-.login-box {
-    background: rgba(0,0,0,0.8);
-    padding: 30px;
-    margin: 100px auto;
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-}
-
-/* Inputs */
-.login-box input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-/* Error */
-#error {
-    color: red;
-    margin-top: 10px;
-}
-
-/* Logout Button */
-.logout-btn {
-    float: right;
-    margin: 10px;
-    background: #ef4444;
-}
-
-.logout-btn:hover {
-    background: #dc2626;
+.light-mode .card {
+    background: #f0f0f0;
 }
