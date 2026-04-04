@@ -4,19 +4,20 @@
 <meta charset="UTF-8">
 <title>Smart Helmet Dashboard</title>
 
-<!-- CSS LINK (VERY IMPORTANT) -->
-<link rel="stylesheet" href="styles.css">
 <style>
 body {
     margin: 0;
     font-family: Arial;
+
     background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+
     color: white;
 }
 
-/* Overlay */
+/* Overlay for readability */
 body::before {
     content: "";
     position: fixed;
@@ -34,8 +35,46 @@ body::before {
     padding: 15px;
 }
 
-/* Grid */
-    </style>
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+button {
+    padding: 8px 12px;
+    border: none;
+    background: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Map */
+iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+</style>
+
 </head>
 
 <body>
@@ -69,15 +108,47 @@ body::before {
     <div class="card">
         <h3>📍 Live Location</h3>
         <iframe 
-src="https://www.google.com/maps?q=17.3850,78.4867&z=15&output=embed"
-width="100%" height="250" style="border:0;" allowfullscreen>
+        src="https://www.google.com/maps?q=17.3850,78.4867&z=15&output=embed"
+        allowfullscreen>
         </iframe>
     </div>
 
 </div>
 
-<!-- JS LINK (IMPORTANT) -->
-<script src="scripts.js"></script>
+<script>
+// Status function
+function setStatus(id, text, isGood) {
+    let el = document.getElementById(id);
+    el.innerText = text;
+    el.style.color = isGood ? "lightgreen" : "red";
+}
+
+// Auto update
+setInterval(() => {
+
+    let helmetOk = Math.random() > 0.5;
+    setStatus("helmet-status", helmetOk ? "Worn ✅" : "Not Worn ❌", helmetOk);
+
+    let alcoholOk = Math.random() > 0.7;
+    setStatus("alcohol-status", alcoholOk ? "Detected ❌" : "Safe ✅", !alcoholOk);
+
+    let accident = Math.random() > 0.9;
+    setStatus("accident-status", accident ? "Accident 🚨" : "Safe", !accident);
+
+}, 3000);
+
+// Bike control
+let bikeOn = false;
+function toggleBike() {
+    bikeOn = !bikeOn;
+    document.getElementById("bike-status").innerText = bikeOn ? "ON ✅" : "OFF ❌";
+}
+
+// Emergency alert
+function sendAlert() {
+    alert("🚨 Emergency Alert Sent!");
+}
+</script>
 
 </body>
 </html>
