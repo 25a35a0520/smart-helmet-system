@@ -1,11 +1,10 @@
-// Status function with colors
 function setStatus(id, text, isGood) {
     let el = document.getElementById(id);
     el.innerText = text;
     el.style.color = isGood ? "lightgreen" : "red";
 }
 
-// Auto update (simulation)
+// AUTO UPDATE
 setInterval(() => {
 
     let helmetOk = Math.random() > 0.5;
@@ -20,7 +19,7 @@ setInterval(() => {
 }, 3000);
 
 
-// Bike control
+// BIKE CONTROL
 let bikeOn = false;
 function toggleBike() {
     bikeOn = !bikeOn;
@@ -28,7 +27,7 @@ function toggleBike() {
 }
 
 
-// Emergency alert
+// ALERT
 function sendAlert() {
     alert("🚨 Emergency Alert Sent!");
 }
